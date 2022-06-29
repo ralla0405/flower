@@ -7,11 +7,11 @@
 Node.js, Node-Red, MongoDB, AWS EC2, HTML, JavaSript, CSS, BootStrap, jQuery, Kakao MAP API
 
 ## 배포
-v1.0.0
-v2.0.0
-v2.0.1
-v2.0.2
-v2.0.3
-v2.0.4
-v2.0.5
-v2.0.6
+-v1.0.0
+-v2.0.0
+-v2.0.1
+-v2.0.2
+-v2.0.3
+-v2.0.4
+-v2.0.5
+-v2.0.6
