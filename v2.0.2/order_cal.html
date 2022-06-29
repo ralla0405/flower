@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>농업회사법인 신호 주식회사</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/dashboard.js?ver=1.0.0"></script>
+        <script type="text/javascript" src="js/order.js?ver=1.0.0"></script>
+        <!-- daum map API -->
+        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" type="text/css" href="css/common.css?ver=1.0.0"/>
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css?ver=1.0.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="wrap container-fluid p-0">
+            <!-- nav-top -->
+            <nav class="nav-top navbar-expand-fluid p-0">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="nav-title navbar-brand"> 신호 주식회사</a>
+                    <div class="nav-logout float-end">
+                        <a href="index.html">로그인</a>
+                        <a href="join_agree.html">회원가입</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                    </div>
+                    <div class="nav-login float-end d-none">
+                        <a class="user-c-name"> 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                        <a href="mypage.html">마이페이지</a>
+                    </div>
+                    <div class="nav-admin float-end d-none">
+                        <a class="user-c-name">관리자 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="order_in.html">수주관리
+                            <span class="orders-cnt">0</span>
+                        </a>
+                        <a href="ship.html">배달관리</a>
+                        <a href="company_list.html">업체관리</a>
+                        <a href="user_list.html">회원관리
+                            <span class="join-cnt">0</span>
+                        </a>
+                        <a href="product_list.html">마이페이지</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav-top-mobile -->
+            <nav class="nav-top-mobile navbar-expand-fluid p-0 d-none">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="nav-title navbar-brand">신호주식회사</a>
+                    <div class="nav-logout float-end">
+                        <a href="index.html">로그인</a>
+                        <a href="join_agree.html">회원가입</a>
+                    </div>
+                    <div class="nav-login float-end d-none">
+                        <a class="user-c-name"> 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="mypage.html">마이페이지</a>
+                    </div>
+                    <div class="nav-admin float-end d-none">
+                        <a class="user-c-name">관리자 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="product_list.html">마이페이지</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- content-dashboard -->
+            <div class="content-dashboard container-fluid p-0">
+                <!-- content-search -->
+                <div class="content-search">
+                    <div class="search-logo">
+                        <a href="/main.html">
+                            <img src="img/login_logo.png" class="search-img">
+                        </a>
+                    </div>
+                </div>
+                <!-- content-mnav -->
+                <div class="content-mnav container-fluid p-0">
+                    <div class="mnav-menu">
+                        <div class="list">
+                            <a href="/dashboard.html?type=house">관엽</a>
+                            <a href="/dashboard.html?type=western">서양란</a>
+                            <a href="/dashboard.html?type=oriental">동양란</a>
+                            <a href="/dashboard.html?type=etc">기타</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-ordercal -->
+                <div class="content-wrap container-fluid p-0">
+                    <div class="wrap-box my">
+                        <div class="location-wrap">
+                            <div class="top-location">
+                                <a href="/main.html" class="text-decoration-none text-dark">홈</a> > <span class="text-bold">마이페이지</span> > <span class="text-bold">정산내역</span>
+                            </div>
+                        </div>
+                        <div class="body-warp-left">
+                            <div class="lmenu">
+                                <div class="lmenu-title">
+                                    <div>
+                                        <i class="bi bi-person-circle"></i>
+                                    </div>
+                                    <div class="title">마이페이지</div>
+                                    <div class="subTitle">MYPAGE</div>
+                                </div>
+                                <div class="myInfo">
+                                    <div class="title"><b>충전금 잔액</b></div>
+                                    <div class="point-val"><b>0</b> 원</div>
+                                    <div class="point-menu">
+                                        <input type="button" name="getPoint" value="충전/사용 내역">
+                                        <input type="button" name="setPoint" value="충전하기">
+                                    </div>
+                                </div>
+                                <div class="lemnu-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">나의 쇼핑정보</a>
+                                            <ul>
+                                                <li class="submenu">
+                                                    <a href="/order_out.html">발주관리</a>
+                                                </li>
+                                                <li class="submenu">
+                                                    <a href="/order_cal.html">정산내역</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">게시판</a>
+                                            <ul>
+                                                <li class="submenu">
+                                                    <a href="/notice.html">공지사항</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">개인정보</a>
+                                            <ul>
+                                                <li class="submenu">
+                                                    <a href="/user_update.html">회원정보 수정</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-warp-right">
+                            <div class="sub-contents">
+                                <div class="right-section">
+                                    <div>
+                                        <h2 class="cont-title02">정산내역</h2>
+                                    </div>
+                                    <div class="container">
+                                        <div class="radius-wrap">
+                                            <div class="col-sm-2 dashboard-title">
+                                                <i class="bi bi-check"></i>정산대상
+                                            </div>
+                                            <div>
+                                                <select name="syear" class="form-select" style="display:inline-block; width:90px;"></select>
+                                                <select name="smonth" class="form-select" style="display:inline-block; width:70px;">
+                                                    <option value="01">01</option>
+                                                    <option value="02">02</option>
+                                                    <option value="03">03</option>
+                                                    <option value="04">04</option>
+                                                    <option value="05">05</option>
+                                                    <option value="06">06</option>
+                                                    <option value="07">07</option>
+                                                    <option value="08">08</option>
+                                                    <option value="09">09</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                </select>
+                                                <button type="button" class="btn btn-sm btn-primary" name="btn-search">조회</button>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-sm-2 dashboard-title">
+                                                <i class="bi bi-check"></i>총발주금액
+                                            </div>
+                                            <div class="col-sm-10 orderOutPrice">0</div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-sm-2 dashboard-title">
+                                                <i class="bi bi-check"></i>총충전금액
+                                            </div>
+                                            <div class="col-sm-10 pointPrice">0</div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="cont-top-wrap">
+                                            <div>총 <span class="pointLen"></span>건이 검색되었습니다.</div>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <colgroup>
+                                            <col width="5%">
+                                            <col width="15%">
+                                            <col width="10%">
+                                            <col width="10%">
+                                            <col width="10%">
+                                            <col width="30%">
+                                            <col width="10%">
+                                            <col width="10%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr class="cont-title">
+                                                <th>번호</th>
+                                                <th>사용발생일</th>
+                                                <th>사용포인트</th>
+                                                <th>충전포인트</th>
+                                                <th>잔여포인트</th>
+                                                <th>기록사항</th>
+                                                <th>영수증</th>
+                                                <th>상태</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="paging"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paging-box ship"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spinner-wrap">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </body>
+</html>

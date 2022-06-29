@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>신호플라워</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/jacascript" src="js/common.js?ver=1.0.0"></script>
+        <script type="text/javascript" src="js/dashboard.js?ver=1.0.0"></script>
+        <script type="text/javascript" src="js/order.js?ver=1.0.0"></script>
+        <!-- import API -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+        <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+        <!-- daum map API -->
+        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" type="text/css" href="css/common.css?ver=1.0.0"/>
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css?ver=1.0.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <!-- nav-top -->
+            <nav class="nav-top navbar-expand-fluid p-0">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="nav-title navbar-brand"> 신호 주식회사</a>
+                    <div class="nav-logout float-end">
+                        <a href="index.html">로그인</a>
+                        <a href="join_agree.html">회원가입</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                    </div>
+                    <div class="nav-login float-end d-none">
+                        <a class="user-c-name"> 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                        <a href="mypage.html">마이페이지</a>
+                    </div>
+                    <div class="nav-admin float-end d-none">
+                        <a class="user-c-name">관리자 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="order_in.html">수주관리
+                            <span class="orders-cnt">0</span>
+                        </a>
+                        <a href="ship.html">배달관리</a>
+                        <a href="company_list.html">업체관리</a>
+                        <a href="user_list.html">회원관리
+                            <span class="join-cnt">0</span>
+                        </a>
+                        <a href="product_list.html">마이페이지</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav-top-mobile -->
+            <nav class="nav-top-mobile-nav navbar-expand-fluid p-0 d-none">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="nav-title-mobile">주문완료</a>
+                </div>
+            </nav>
+            <!-- content-dashboard -->
+            <div class="content-dashboard container-fluid p-0">
+                <!-- content-search -->
+                <div class="content-search">
+                    <div class="search-logo">
+                        <a href="/main.html">
+                            <img src="img/login_logo.png" class="search-img">
+                        </a>
+                    </div>
+                </div>
+                <!-- content-mnav -->
+                <div class="content-mnav container-fluid p-0 d-none">
+                    <div class="mnav-menu">
+                        <div class="list">
+                            <a href="/dashboard.html?type=house">관엽</a>
+                            <a href="/dashboard.html?type=western">서양란</a>
+                            <a href="/dashboard.html?type=oriental">동양란</a>
+                            <a href="/dashboard.html?type=etc">기타</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-order -->
+                <div class="content-wrap content-nav container-fluid p-0">
+                    <div class="content-product">
+                        <div class="order-ok" style="padding: 0 0 30px 0;">
+                            <div class="location">
+                                <a href="/main.html" class="home">홈</a> > <a href="javascript:;">주문작성/결제</a> > <a href="javascript:;">주문완료</a>
+                            </div>
+                            <div class="orderok-title">
+                                <h1><i class="bi bi-credit-card-2-front-fill"></i> 주문완료</h1>
+                            </div>
+                            <h2 class="orderok-content-title">주문하신 상품</h2>
+                            <table class="orderok-content">
+                                <colgroup>
+                                    <col style="width:25%">
+                                    <col style="width:25%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                    <col style="width:10%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th colspan="2">상품명</th>
+                                        <th>가격</th>
+                                        <th>배송비</th>
+                                        <th>옵션가격</th>
+                                        <th>수량</th>
+                                        <th>합계</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="/content.html" class="product-link">
+                                                <img src="" class="productSrc">
+                                            </a>
+                                        </td>
+                                        <td style="text-align: left; padding: 5px 10px; border-left: 0px; color: #000; font-size: 15px; line-height: 22px;">
+                                            <div>
+                                                <a href="/content.html" class="product-link productName"></a><br><span class="productInfo"></span>
+                                            </div>
+                                        </td>
+                                        <td style="padding-right: 10px;" class="productPrice"></td>
+                                        <td style="padding-right: 10px;" class="shippingPrice"></td>
+                                        <td style="padding-right: 10px;" class="optionPrice"></td>
+                                        <td class="productCnt"></td>
+                                        <td class="resultPrice"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="merchant_uidWrap">- 고객님의 주문번호는 <span class="merchant_uid"></span> 입니다. -</div>
+                            <div class="addrInfoWrap">
+                                <div class="addrInfo-left">
+                                    <h2>배송지 정보</h2>
+                                    <table>
+                                        <colgroup>
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tdbody>
+                                            <tr>
+                                                <th>경조사어</th>
+                                                <td class="orderMemo"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>이름</th>
+                                                <td class="orderTo"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>휴대폰번호</th>
+                                                <td class="orderPhone"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>배달주소</th>
+                                                <td class="orderAddr"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>배송시간</th>
+                                                <td class="orderTime"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>요청사항</th>
+                                                <td class="orderRequest"></td>
+                                            </tr>
+                                        </tdbody>
+                                    </table>
+                                </div>
+                                <div class="addrInfo-right">
+                                    <h2>결제 정보</h2>
+                                    <table>
+                                        <colgroup>
+                                            <col width="30%">
+                                            <col width="70%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>주문금액</th>
+                                                <td class="resultPrice"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>결제방법</th>
+                                                <td class="payWay"></td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td class="etc">*신용카드매출전표를 받으시면 세금계산서신청을 하실 수 없습니다.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="okBtnWrap">
+                                <a href="/dashboard.html">
+                                    <span>확인</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="order-ok-mobile" style="padding: 0 0 30px 0;">
+                            <div class="location">
+                                <a href="/main.html" class="home">홈</a> > <a href="javascript:;">주문작성/결제</a> > <a href="javascript:;">주문완료</a>
+                            </div>
+                            <div class="orderok-title">
+                                <h1><i class="bi bi-credit-card-2-front-fill"></i> 주문완료</h1>
+                            </div>
+                            <h2 class="orderok-content-title">주문하신 상품</h2>
+                            <table class="orderok-content">
+                                <colgroup>
+                                    <col style="width:30%">
+                                    <col style="width:70%">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>상품명</th>
+                                        <td>
+                                            <a href="/content.html" class="product-link">
+                                                <img src="" class="productSrc">
+                                                <div style="text-align: center; padding: 5px 10px; border-left: 0px; color: #000; font-size: 15px;">
+                                                    <a href="/content.html" class="product-link productName"></a><br><span class="productInfo"></span>
+                                                </div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>가격</th>
+                                        <td style="padding-right: 10px;" class="productPrice"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>배송비</th>
+                                        <td style="padding-right: 10px;" class="shippingPrice"></td>
+                                    </tr>    
+                                    <tr>
+                                        <th>옵션가격</th>
+                                        <td style="padding-right: 10px;" class="optionPrice"></td>
+                                    </tr>    
+                                    <tr>
+                                        <th>수량</th>
+                                        <td class="productCnt"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>합계</th>
+                                        <td class="resultPrice"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="merchant_uidWrap">- 고객님의 주문번호는 <span class="merchant_uid"></span> 입니다. -</div>
+                            <div class="addrInfoWrap">
+                                <div class="addrInfo-left">
+                                    <h2>배송지 정보</h2>
+                                    <table>
+                                        <colgroup>
+                                            <col width="40%">
+                                            <col width="60%">
+                                        </colgroup>
+                                        <tdbody>
+                                            <tr>
+                                                <th>경조사어</th>
+                                                <td class="orderMemo"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>이름</th>
+                                                <td class="orderTo"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>휴대폰번호</th>
+                                                <td class="orderPhone"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>배달주소</th>
+                                                <td class="orderAddr"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>배송시간</th>
+                                                <td class="orderTime"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>요청사항</th>
+                                                <td class="orderRequest"></td>
+                                            </tr>
+                                        </tdbody>
+                                    </table>
+                                </div>
+                                <div class="addrInfo-right">
+                                    <h2>결제 정보</h2>
+                                    <table>
+                                        <colgroup>
+                                            <col width="40%">
+                                            <col width="60%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>주문금액</th>
+                                                <td class="resultPrice"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>결제방법</th>
+                                                <td class="payWay"></td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td class="etc">*신용카드매출전표를 받으시면 세금계산서신청을 하실 수 없습니다.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="okBtnWrap">
+                                <a href="/dashboard.html">
+                                    <span>확인</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

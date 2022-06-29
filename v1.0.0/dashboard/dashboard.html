@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        <title>농업회사법인 신호 주식회사</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="/js/load-image.all.min.js"></script>
+        <script type="text/javascript" src="dashboard.js?ver=1.03"></script>
+        <link rel="shortcut icon" href="#"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+        <link rel="stylesheet" type="text/css" href="dashboard.css?ver=1.04"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    </head>
+    <body>
+        <div class="index">
+            <div class="title">
+                <h2>농업회사법인 신호 주식회사</h2>
+                <h2 class="noticeTitle"></h2>
+                <h2 class="noticeContent"></h2>
+                <div class="noticeBtn topNav">
+                    <input type="button" value="공지사항등록">
+                </div>
+                <div class="userBtn topNav">
+                    <input type="button" value="회원가입승인">
+                </div>
+                <div class="imgBtn topNav">
+                    <input type="button" value="제품 업로드">
+                </div>
+                <div class="logoutBtn topNav">
+                    <input type="button" value="로그아웃">
+                </div>
+            </div>
+            <div class="content">
+                <div class="flowerCol">
+                    <div class="colTitle" value="동양란">
+                        <span>동양란</span>
+                    </div>
+                    <div class="colContents orientalPlant"></div>
+                </div>
+                <div class="flowerCol">
+                    <div class="colTitle" value="서양란">
+                        <span>서양란</span>
+                    </div>
+                    <div class="colContents westernPlant"></div>
+                </div>
+                <div class="flowerCol">
+                    <div class="colTitle" value="관엽">
+                        <span>관엽(소)</span>
+                    </div>
+                    <div class="colContents housePlant"></div>
+                </div>
+                <div class="flowerCol">
+                    <div class="colTitle" value="기타">
+                        <span>관엽(중,대)</span>
+                    </div>
+                    <div class="colContents finishedPlant"></div>
+                </div>
+                <div class="animationDiv userView">
+                    <div class="formDiv">
+                        <div class="formTitle">
+                            <span class="formText" id="userViewText">제품이름</span>
+                            <span class="formX" title="닫기">×</span>
+                        </div>
+                        <form class="formContainer">
+                            <div class="containerDiv">
+                                    <b>이미지</b>
+                                    <div class="userViewImg">
+                                        <img class="imgView" src="#">
+                                    </div>
+                            </div>
+                            <!--<div class="containerDiv">
+                                <label>
+                                    <b>종류</b>
+                                </label>
+                                <div class="userViewLabel" id="userViewType"></div>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>정보</b>
+                                </label>
+                                <div class="userViewLabel" id="userViewInfo"></div>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>금액</b>
+                                </label>
+                                <div class="userViewLabel" id="userViewPrice"></div>
+                            </div>-->
+                        </form>
+                    </div>
+                </div>
+                <div class="animationDiv notice">
+                    <div class="formDiv">
+                        <div class="formTitle">
+                            <span class="formText">공지사항</span>
+                            <span class="formX" title="닫기">×</span>
+                        </div>
+                        <form class="formContainer">
+                            <div class="containerDiv">
+                                <label>
+                                    <b>공지사항 제목</b>
+                                </label>
+                                <input type="text" class="noticeTitleInput" placeholder="공지사항 제목 입력" name="psw" required>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>공지사항 내용</b>
+                                </label>
+                                <input type="text" class="noticeContentInput" placeholder="공지사항 내용 입력" name="psw" required>
+                            </div>
+                            <div class="containerDiv">
+                                <input type="button" class="noticeInsertBtn" value="등록">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="animationDiv userList">
+                    <div class="formDiv">
+                        <div class="formTitle">
+                            <span class="formText">회원가입승인</span>
+                            <span class="formX" title="닫기">×</span>
+                        </div>
+                        <form class="formContainer">
+                            <div class="containerDiv list"></div>
+                            <div class="containerDiv">
+                                <input type="button" class="userApprovedBtn" value="승인">
+                            </div>
+                            <div class="containerDiv">
+                                <input type="button" class="userListDown" value="회원정보다운">
+                            </div>
+                        </form>
+                    </div>
+                    <table class="table" id="table">
+                        <caption>회원정보 리스트</caption>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>사업자등록번호</th>
+                                <th>사업자명</th>
+                                <th>사업자주소</th>
+                                <th>이메일</th>
+                                <th>대표자명</th>
+                                <th>핸드폰번호</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="animationDiv upload">
+                    <div class="formDiv">
+                        <div class="formTitle">
+                            <span class="formText">제품 업로드</span>
+                            <span class="formX" title="닫기">×</span>
+                        </div>
+                        <form class="formContainer" action="/uploads.php" method="post" enctype="multipart/form-data">
+                            <div class="containerDiv">
+                                <div class="imgDiv">
+                                    <b>제품 이미지</b>
+                                    <input type="file" class="productImg" id="productImg" name="productImg" accept="img/*" required>
+                                </div>
+                                <div class="imgDiv">
+                                    <b>미리보기</b>
+                                    <div class="previewDiv">
+                                        <img class="productPreview" src="#">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품 종류</b>
+                                </label>
+                                <select class="productType" name="productType">
+                                    <option value="orientalPlant">동양란</option>
+                                    <option value="westernPlant">서양란</option>
+                                    <option value="housePlant">관엽</option>
+                                    <option value="finishedPlant">기타</option>
+                                </select>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품이름</b>
+                                </label>
+                                <input type="text" class="productName" name="productName" placeholder="제품이름 입력" required>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품정보</b>
+                                </label>
+                                <input type="text" class="productInfo" name="productInfo" placeholder="제품정보 입력" required>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품금액 (원)</b>
+                                </label>
+                                <input type="number" class="productPrice" name="productPrice" placeholder="숫자만 입력" required>
+                            </div>
+                            <div class="containerDiv">
+                                <input type="submit" class="inputImgBtn" value="제품 업로드">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="animationDiv update">
+                    <div class="formDiv">
+                        <div class="formTitle">
+                            <span class="formText">제품 수정</span>
+                            <span class="formX" title="닫기">×</span>
+                        </div>
+                        <form class="formContainer" action="/update.php" method="post" enctype="multipart/form-data">
+                            <div class="containerDiv">
+                                <div class="imgDiv">
+                                    <b>제품 이미지</b>
+                                    <input type="file" class="updateImg" name="updateImg" accept="img/*">
+                                </div>
+                                <div class="imgDiv">
+                                    <b>미리보기</b>
+                                    <div class="previewDiv">
+                                        <input type="text" class="updatePreImg" name="updatePreImg">
+                                        <img class="updatePreview" src="#">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품 종류</b>
+                                </label>
+                                <input type="text" class="updatePreType" name="updatePreType">
+                                <select class="updateType" name="updateType">
+                                    <option value="orientalPlant">동양란</option>
+                                    <option value="westernPlant">서양란</option>
+                                    <option value="housePlant">관엽</option>
+                                    <option value="finishedPlant">기타</option>
+                                </select>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품이름</b>
+                                </label>
+                                <input type="text" class="updateName" name="updateName" placeholder="제품이름 입력" required>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품정보</b>
+                                </label>
+                                <input type="text" class="updateInfo" name="updateInfo" placeholder="제품정보 입력" required>
+                            </div>
+                            <div class="containerDiv">
+                                <label>
+                                    <b>제품금액 (원)</b>
+                                </label>
+                                <input type="number" class="updatePrice" name="updatePrice" placeholder="숫자만 입력" required>
+                            </div>
+                            <div class="containerDiv">
+                                <input type="submit" class="updateImgBtn" value="제품 수정">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>신호플라워</title>
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/common/class.js"></script>
+        <script type="text/javascript" src="js/common/common.js"></script>
+        <script type="text/javascript" src="js/util/post.js"></script>
+        <script type="text/javascript" src="js/order.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <!-- font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+        <link rel="shortcut icon" href="#">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/ship_insert.css?ver=1.0.1"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div style="background-color: #87B14B; margin-bottom: 20px;">
+            <div style="height: 40px; font-size: 20px; padding-top: 6px; padding-left: 20px; color: #FFF;">
+                <span style="color:#Fff; font-style:italic; font-weight:bold; font-size:20px; ">배송사진 및 인수자 등록</span>
+            </div>
+        </div>
+        <div class="container">
+            <form id="frm-dphoto-taker" name="frm-dphoto-taker" class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+                <div class="text-right">
+                    <i class="bi bi-check-lg required-icon"></i> 항목은 필수 입력항목입니다.
+                    <hr>
+                </div>
+                <div class="form-group">
+                    <label for="omid" class="col-sm-2 control-label"><i class="bi bi-check-lg required-icon"></i>인수자</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="delPerson" placeholder="인수자명" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="omid" class="col-sm-2 control-label">관계</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="delPersonRel" placeholder="관계" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배달일시</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control date" name="shipDate" value="" style="display:inline-block; width:160px; text-align:center;">
+                        <select class="form-select" name="shipDate_h" style="display:inline-block; width:140px;">            	
+                            <option value="00">00시</option>
+                            <option value="01">01시</option>
+                            <option value="02">02시</option>
+                            <option value="03">03시</option>
+                            <option value="04">04시</option>
+                            <option value="05">05시</option>
+                            <option value="06">06시</option>
+                            <option value="07">07시</option>
+                            <option value="08">08시</option>
+                            <option value="09">09시</option>
+                            <option value="10">10시</option>
+                            <option value="11">11시</option>
+                            <option value="12">12시</option>
+                            <option value="13">13시</option>
+                            <option value="14">14시</option>
+                            <option value="15">15시</option>
+                            <option value="16">16시</option>
+                            <option value="17">17시</option>
+                            <option value="18">18시</option>
+                            <option value="19">19시</option>
+                            <option value="20">20시</option>
+                            <option value="21">21시</option>
+                            <option value="22">22시</option>
+                            <option value="23">23시</option>	            
+                        </select>
+                        <select class="form-select" name="shipDate_m" style=" display:inline-block; width:80px;">
+                            <option value="00">00분</option>
+                            <option value="10">10분</option>
+                            <option value="20">20분</option>
+                            <option value="30">30분</option>
+                            <option value="40">40분</option>
+                            <option value="50" selected="">50분</option>
+                        </select>   
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 col-sm-offset-2" style="font-size:14px; color:#666; font-weight:bold">
+                        이미 등록한 배송사진은 덮어씌어 집니다.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진1</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="0" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file1" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진2</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="1" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file2" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진3</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="2" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file3" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진4</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="3" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file4" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진5</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="4" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file5" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진6</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="5" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file6" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진7</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="6" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file7" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진8</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="7" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file8" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진9</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="8" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file9" accept="img/*">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id" class="col-sm-2 control-label">배송사진10</label>
+                    <div class="col-sm-10">
+                        <div name="div-photo" class="div-photo" style="display:none;">
+                            <img name="img-photo" style="margin-right: 10px; cursor: pointer;" width="100" height="100" data-id="9" src="">
+                            <button type="button" class="btn btn-xs btn-danger" name="btn-photo-remove"><i class="bi bi-x removeIcon"></i></button>
+                        </div>
+                        <input type="file" class="form-control" id="shipImg" name="dphoto-file10" accept="img/*">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-group text-center noprint" style="margin-top:20px;">    
+            <button type="button" class="btn btn-register" name="btn-register" >등록하기</button>
+            <button type="button" class="btn btn-default" name="btn-close">취소</button>
+        </div>
+    </body>
+</html>

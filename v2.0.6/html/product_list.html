@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>신호플라워</title>
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/common/class.js"></script>
+        <script type="text/javascript" src="js/common/common.js"></script>
+        <script type="text/javascript" src="js/util/post.js"></script>
+        <script type="text/javascript" src="js/product.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <!-- font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+        <link rel="shortcut icon" href="#">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/common.css?ver=1.0.0"/>
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css?ver=1.0.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <!-- nav-top -->
+            <nav class="nav-top navbar-expand-fluid p-0">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="nav-title navbar-brand"> 신호 주식회사</a>
+                    <div class="nav-logout float-end">
+                        <a href="index.html">로그인</a>
+                        <a href="join_agree.html">회원가입</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                    </div>
+                    <div class="nav-login float-end d-none">
+                        <a class="user-c-name"> 님</a>
+                        <a href="mypage.html">포인트
+                            <span class="point-value">0</span>
+                        </a>
+                        <a href="point.html">충전하기</a>
+                        <a class="logout-btn" onclick="logout()">로그아웃</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                        <a href="mypage.html">마이페이지</a>
+                    </div>
+                    <div class="nav-admin float-end d-none">
+                        <a class="user-c-name">관리자 님</a>
+                        <a class="logout-btn" onclick="logout()">로그아웃</a>
+                        <a href="order_in.html">수주관리
+                            <span class="orders-cnt">0</span>
+                        </a>
+                        <a href="ship.html">배달관리</a>
+                        <a href="company_list.html">업체관리</a>
+                        <a href="user_list.html">회원관리
+                            <span class="join-cnt">0</span>
+                        </a>
+                        <a href="product_list.html">마이페이지</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav-top-mobile -->
+            <nav class="nav-top-mobile-nav navbar-expand-fluid p-0 d-none">
+                <div class="nav-wrap container-fluid p-0">
+                    <i class="bi bi-chevron-left go-home" onclick="goHome()"></i>
+                    <a class="nav-title-mobile">상품목록</a>
+                </div>
+            </nav>
+            <!-- content-dashboard -->
+            <div class="content-dashboard container-fluid p-0">
+                <!-- content-search -->
+                <div class="content-search">
+                    <div class="search-logo">
+                        <a href="/main.html">
+                            <img src="img/login_logo.png" class="search-img">
+                        </a>
+                    </div>
+                </div>
+                <!-- content-mnav -->
+                <div class="content-mnav container-fluid p-0 d-none">
+                    <div class="mnav-menu">
+                        <div class="list">
+                            <a href="/dashboard.html?type=house">관엽</a>
+                            <a href="/dashboard.html?type=western">서양란</a>
+                            <a href="/dashboard.html?type=oriental">동양란</a>
+                            <a href="/dashboard.html?type=etc">기타</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-orderin -->
+                <div class="content-wrap container-fluid p-0">
+                    <div class="wrap-box my">
+                        <div class="location-wrap">
+                            <div class="top-location">
+                                <a href="/main.html" class="text-decoration-none text-dark">홈</a> > <span class="text-bold">마이페이지</span>
+                            </div>
+                        </div>
+                        <div class="body-wrap-left">
+                            <div class="lmenu">
+                                <div class="lmenu-title">
+                                    <div>
+                                        <i class="bi bi-person-circle"></i>
+                                    </div>
+                                    <div class="title">마이페이지</div>
+                                    <div class="subTitle">MYPAGE</div>
+                                </div>
+                                <div class="lemnu-menu list">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">나의 쇼핑정보</a>
+                                            <ul>
+                                                <li class="submenu">
+                                                    <a href="/order_in.html">수주관리</a>
+                                                </li>
+                                                <li class="submenu">
+                                                    <a href="/ship.html">배달관리</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">상품관리</a>
+                                            <ul>
+                                                <li class="submenu on">
+                                                    <a href="/product_list.html" class="on">상품목록</a>
+                                                </li>
+                                                <li class="submenu">
+                                                    <a href="/product_form.html">상품등록</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">게시판</a>
+                                            <ul>
+                                                <li class="submenu">
+                                                    <a href="/notice.html">공지사항</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">개인정보</a>
+                                            <ul>
+                                                <li class="submenu">
+                                                    <a href="/user_list.html">회원관리</a>
+                                                </li>
+                                                <li class="submenu">
+                                                    <a href="/company_list.html">업체관리</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body-wrap-right list">
+                            <div class="sub-contents">
+                                <div class="right-section">
+                                    <div>
+                                        <h2 class="cont-title02">상품목록</h2>
+                                    </div>
+                                    <div>
+                                        <div class="cont-top-wrap">
+                                            <div style="display: inline-block; width: 100%;">
+                                                <span class="mobile">총 <span class="productLen"></span>개의 상품이 검색되었습니다.</span>
+                                                <input type="button" name="priceAdapt" class="btn" value="적용">
+                                                <span style="color: blue; float: right; margin-left: 5px;">기업가 <input type="text" name="companyPercent" class="form-control" oninput="checkNumber(this)" style="display: inline-block; width: 80px;"> % </span>
+                                                <span style="color: blue; float: right; margin-left: 5px;"> 소비자가 <input type="text" name="consumerPercent" class="form-control" oninput="checkNumber(this)" style="display: inline-block; width: 80px;"> %</span>
+                                                <span style="color: red; float: right; margin-left: 5px;"> 특고급 <input type="text" name="highend" class="form-control" oninput="checkNumber(this)" style="display: inline-block; width: 80px;"> %</span>
+                                                <span style="color: red; float: right;"> 고급 <input type="text" name="advanced" class="form-control" oninput="checkNumber(this)" style="display: inline-block; width: 80px;"> %</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <colgroup>
+                                            <col width="5%">
+                                            <col width="10%">
+                                            <col width="20%">
+                                            <col width="10%">
+                                            <col width="10%">
+                                            <col width="10%">
+                                            <col width="15%">
+                                            <col width="5%">
+                                            <col width="10%">
+                                            <col width="5%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr class="cont-title">
+                                                <th>
+                                                    <label>
+                                                        <input type="checkbox" name="pListAll" onclick="checkPListAll();">
+                                                        <span></span>
+                                                    </label>
+                                                </th>
+                                                <th>상품번호<br>(상품코드)</th>
+                                                <th>상품명<br>카테고리</th>
+                                                <th>소비자가</th>
+                                                <th>기업가</th>
+                                                <th>도매직발주가</th>
+                                                <th>추가배송비</th>
+                                                <th>택배가능</th>
+                                                <th class="viewCntTh">조회수<br>판매수량</th>
+                                                <th>기능</th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="cont-bottom-wrap">
+                                        <span class="btn" onclick="checkPListAll();">전체선택</span>
+                                        <span class="btn" onclick="deletePList();">선택삭제</span>
+                                    </div>
+                                    <div class="paging"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paging-box ship"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="spinner-wrap">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </body>
+</html>

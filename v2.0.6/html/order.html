@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>신호플라워</title>
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/common/class.js"></script>
+        <script type="text/javascript" src="js/common/common.js"></script>
+        <script type="text/javascript" src="js/util/post.js"></script>
+        <script type="text/javascript" src="js/order.js"></script>
+        <!-- daum map API -->
+        <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="shortcut icon" href="#">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/common.css?ver=1.0.0"/>
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css?ver=1.0.1"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <!-- nav-top -->
+            <nav class="nav-top navbar-expand-fluid p-0">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="nav-title navbar-brand"> 신호 주식회사</a>
+                    <div class="nav-logout float-end">
+                        <a href="index.html">로그인</a>
+                        <a href="join_agree.html">회원가입</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                    </div>
+                    <div class="nav-login float-end d-none">
+                        <a class="user-c-name"> 님</a>
+                        <a href="mypage.html">포인트
+                            <span class="point-value">0</span>
+                        </a>
+                        <a href="point.html">충전하기</a>
+                        <a class="logout-btn" onclick="logout()">로그아웃</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                        <a href="mypage.html">마이페이지</a>
+                    </div>
+                    <div class="nav-admin float-end d-none">
+                        <a class="user-c-name">관리자 님</a>
+                        <a class="logout-btn" onclick="logout()">로그아웃</a>
+                        <a href="order_in.html">수주관리
+                            <span class="orders-cnt">0</span>
+                        </a>
+                        <a href="ship.html">배달관리</a>
+                        <a href="company_list.html">업체관리</a>
+                        <a href="user_list.html">회원관리
+                            <span class="join-cnt">0</span>
+                        </a>
+                        <a href="product_list.html">마이페이지</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav-top-mobile -->
+            <nav class="nav-top-mobile-nav navbar-expand-fluid p-0 d-none">
+                <div class="nav-wrap container-fluid p-0">
+                    <i class="bi bi-chevron-left" onclick="goBack()"></i>
+                    <a class="nav-title-mobile">배송 및 결제정보입력</a>
+                </div>
+            </nav>
+            <!-- content-dashboard -->
+            <div class="content-dashboard container-fluid p-0">
+                <!-- content-search -->
+                <div class="content-search">
+                    <div class="search-logo">
+                        <a href="/main.html">
+                            <img src="img/login_logo.png" class="search-img">
+                        </a>
+                    </div>
+                </div>
+                <!-- content-mnav -->
+                <div class="content-mnav container-fluid p-0 d-none">
+                    <div class="mnav-menu">
+                        <div class="list">
+                            <a href="/dashboard.html?type=house">관엽</a>
+                            <a href="/dashboard.html?type=western">서양란</a>
+                            <a href="/dashboard.html?type=oriental">동양란</a>
+                            <a href="/dashboard.html?type=etc">기타</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-order -->
+                <div class="content-wrap content-nav container-fluid p-0">
+                    <div class="content-product">
+                        <div class="order-wrap">
+                            <div class="order-left">
+                                <div class="order-text">
+                                    <h3>1. 리본문구</h3>
+                                    <table>
+                                        <colgroup>
+                                            <col width=21%>
+                                            <col width=79%>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>자주쓰는 경조사어 선택</th>
+                                                <td>
+                                                    <div class="orderMemoTxtTop">
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝結婚</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝華婚</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">謹弔</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝發展</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝開業</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝移轉</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝榮轉</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝昇進</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">祝古稀</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">삼가 故人의 冥福을 빕니다</a>
+                                                    </div>
+                                                    <div class="orderMemoTxtBot">
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축결혼</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축화혼</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">근조</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축발전</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축개업</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축이전</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축영전</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축승진</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">축고희</a>
+                                                        <a class="orderMemoA" onclick="orderMemoInsert(this)">삼가 고인의 명복을 빕니다</a>
+                                                    </div>
+                                                    <select name="orderMemoList" class="d-none">
+                                                        <option>祝結婚</option>
+                                                        <option>축결혼</option>
+                                                        <option>祝華婚</option>
+                                                        <option>축화혼</option>
+                                                        <option>謹弔</option>
+                                                        <option>근조</option>
+                                                        <option>祝發展</option>
+                                                        <option>축발전</option>
+                                                        <option>祝開業</option>
+                                                        <option>축개업</option>
+                                                        <option>祝移轉</option>
+                                                        <option>축이전</option>
+                                                        <option>祝榮轉</option>
+                                                        <option>축영전</option>
+                                                        <option>祝昇進</option>
+                                                        <option>축승진</option>
+                                                        <option>祝古稀</option>
+                                                        <option>축고희</option>
+                                                        <option>삼가 故人의 冥福을 빕니다</option>
+                                                        <option>삼가 고인의 명복을 빕니다</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>경조사어</th>
+                                                <td>
+                                                    <div style="width: 90%;">
+                                                        <input type="text" name="orderMemo" class="text form-control">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>보내는분</th>
+                                                <td>
+                                                    <div class="input-group" style="width: 90%;">
+                                                        <button class="btn btn-outline-secondary" name="orderFromBtn" type="button" id="button-addon1" style="padding: 0;">검색/등록</button>
+                                                        <input type="text" class="form-control" name="orderFrom" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                                                    </div>
+                                                    <select name="orderFromList" class="d-none"></select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>옵션상품</th>
+                                                <td>
+                                                    <span>케이크</span>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionCake" type="radio" name="cake" id="cake25" value="25000">
+                                                        <label class="form-check-label" for="cake25">25000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionCake" type="radio" name="cake" id="cake30" value="30000">
+                                                        <label class="form-check-label" for="cake30">30000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionCake" type="radio" name="cake" id="cake35" value="35000">
+                                                        <label class="form-check-label" for="cake35">35000</label>
+                                                    </div>
+                                                    <span class="chk-false" name="cake">해제</span>
+                                                    <br>
+                                                    <span>초콜렛</span>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionChoco" type="radio" name="choco" id="choco10" value="10000">
+                                                        <label class="form-check-label" for="choco10">10000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionChoco" type="radio" name="choco" id="choco15" value="15000">
+                                                        <label class="form-check-label" for="choco15">15000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionChoco" type="radio" name="choco" id="choco20" value="20000">
+                                                        <label class="form-check-label" for="choco20">20000</label>
+                                                    </div>
+                                                    <span class="chk-false" name="choco">해제</span>
+                                                    <br>
+                                                    <span>사 탕</span>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionCandy" type="radio" name="candy" id="candy10" value="10000">
+                                                        <label class="form-check-label" for="candy10">10000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionCandy" type="radio"  name="candy" id="candy15" value="15000">
+                                                        <label class="form-check-label" for="candy15">15000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionCandy" type="radio"  name="candy" id="candy20" value="20000">
+                                                        <label class="form-check-label" for="candy20">20000</label>
+                                                    </div>
+                                                    <span class="chk-false" name="candy">해제</span>
+                                                    <br>
+                                                    <span>빼뺴로</span>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionBbebbe" type="radio" name="bbebbe" id="bbebbe10" value="10000">
+                                                        <label class="form-check-label" for="bbebbe10">10000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionBbebbe" type="radio" name="bbebbe" id="bbebbe15" value="15000">
+                                                        <label class="form-check-label" for="bbebbe15">15000</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input optionBbebbe" type="radio" name="bbebbe" id="bbebbe20" value="20000">
+                                                        <label class="form-check-label" for="bbebbe20">20000</label>
+                                                    </div>
+                                                    <span class="chk-false" name="bbebbe">해제</span>
+                                                    <br>
+                                                    <span>화분받침대</span>
+                                                    <div class="form-check form-check-inline potDiv">
+                                                        <input class="form-check-input optionPot" type="radio" name="pot" id="pot5" value="5000">
+                                                        <label class="form-check-label" for="pot5">서랍물받이</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline potDiv">
+                                                        <input class="form-check-input optionPot" type="radio" name="pot" id="pot10" value="10000">
+                                                        <label class="form-check-label" for="pot10">바퀴물받이</label>
+                                                    </div>
+                                                    <span class="chk-false" name="pot">해제</span>
+                                                    <br>
+                                                    <span>배송비</span>
+                                                    <input class="form-control optionShip" type="text" name="orderShip" value="0" oninput="checkNumber(this)"> 원
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="order-delivery">
+                                    <h3>2. 배송정보</h3>
+                                    <table>
+                                        <colgroup>
+                                            <col width=17%>
+                                            <col width=33%>
+                                            <col width=17%>
+                                            <col width=33%>
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>받는사람</th>
+                                                <td>
+                                                    <div>
+                                                        <input type="text" name="orderTo" class="text form-control">
+                                                    </div>
+                                                </td>
+                                                <th>휴대폰번호</th>
+                                                <td>
+                                                    <div>
+                                                        <input type="text" name="orderPhone" class="text form-control" maxlength="13" onkeyup="inputPhoneNumber(this)" placeholder="숫자만 입력">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>택배배송</th>
+                                                <td colspan="3">
+                                                    <input type="checkbox" name="shipState" class="form-check" style="width:18px; height:18x;" disabled>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>배달일시</th>
+                                                <td colspan="3">
+                                                    <div class="order-date">
+                                                        <input type="date" name="orderDate" class="date form-control">
+                                                        <select class="hours" name="orderHours">
+                                                            <option value="">선택</option>
+                                                            <option value="08">오전 8</option>
+                                                            <option value="09">오전 9</option>
+                                                            <option value="10">오전 10</option>
+                                                            <option value="11">오전 11</option>
+                                                            <option value="12">오후 12</option>
+                                                            <option value="13">오후 1</option>
+                                                            <option value="14">오후 2</option>
+                                                            <option value="15">오후 3</option>
+                                                            <option value="16">오후 4</option>
+                                                            <option value="17">오후 5</option>
+                                                            <option value="18">오후 6</option>
+                                                            <option value="19">오후 7</option>
+                                                            <option value="20">오후 8</option>
+                                                            <option value="21">오후 9</option>
+                                                            <option value="22">오후 10</option>
+                                                        </select> 
+                                                        <span>시</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>배송지</th>
+                                                <td colspan="3">
+                                                    <div class="presentAddr">
+                                                        <div class="input-group mb-3">
+                                                            <input type="text" class="form-control" name="addr" placeholder="주소를 검색해주세요" aria-label="Recipient's username" aria-describedby="button-addon2" readonly>
+                                                            <button class="btn btn-outline-secondary" type="button" name="addrBtn" id="button-addon2" style="padding: 0;">주소검색</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="presentAddrExtra">
+                                                        <input type="text" name="orderAddrExtra" class="text form-control" placeholder="나머지 주소를 입력해 주세요.">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>요청사항</th>
+                                                <td colspan="3">
+                                                    <input type="text" name="orderRequest" class="text form-control">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="order-right">
+                                <div class="order-product">
+                                    <h3>3. 주문상품 확인</h3>
+                                    <table style="table-layout: fixed;">
+                                        <colgroup>
+                                            <col width="35%">
+                                            <col width="65%">
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th>상품명</th>
+                                                <td class="productName"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>품질</th>
+                                                <td class="productQuality"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>판매금액</th>
+                                                <td class="productPrice"></td>
+                                            </tr>
+                                            <tr>
+                                                <th>배송비</th>
+                                                <td class="shippingPrice"></td>
+                                                <input type="hidden" class="plusShippingPrice" value="">
+                                            </tr>
+                                            <tr>
+                                                <th>옵션비</th>
+                                                <td class="optionPrice">0원</td>
+                                            </tr>
+                                            <tr>
+                                                <th>구매수량</th>
+                                                <td class="productCnt"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="order-total-wrap">
+                                        <span>주문금액합계</span>
+                                        <span class="totalPrice"></span>
+                                    </div>
+                                    <div>
+                                        <table class="pay-table" style="table-layout: fixed;">
+                                            <colgroup>
+                                                <col width="37%">
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <label for="pay4" class="check-label">
+                                                            <input type="radio" class="radio" name="payway" id="pay4" value="point" checked="true"> 포인트
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <a href="javascript:;">
+                                            <span class="order-submit" onclick="orderSubmit();">결제하기</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

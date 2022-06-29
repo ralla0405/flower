@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>신호플라워</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <!-- jquery ui css-->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" type="text/css" href="css/common.css?ver=1.0.0"/>
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css?ver=1.0.4"/>
+        <!-- font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- jquery js -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- jquery ui js -->
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
+        <script type="text/javascript" src="js/dashboard.js?ver=1.0.0"></script>
+    </head>
+    <body>
+        <div class="container-fluid p-0">
+            <!-- nav-top -->
+            <nav class="nav-top navbar-expand-fluid p-0">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="nav-title navbar-brand"> 신호플라워</a>
+                    <div class="nav-logout float-end">
+                        <a href="index.html">로그인</a>
+                        <a href="join_agree.html">회원가입</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                    </div>
+                    <div class="nav-login float-end d-none">
+                        <a class="user-c-name"> 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="notice.html">공지사항
+                            <span class="notice-cnt">0</span>
+                        </a>
+                        <a href="mypage.html">마이페이지</a>
+                    </div>
+                    <div class="nav-admin float-end d-none">
+                        <a class="user-c-name">관리자 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="order_in.html">수주관리
+                            <span class="orders-cnt">0</span>
+                        </a>
+                        <a href="ship.html">배달관리</a>
+                        <a href="company_list.html">업체관리</a>
+                        <a href="user_list.html">회원관리
+                            <span class="join-cnt">0</span>
+                        </a>
+                        <a href="product_list.html">마이페이지</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- nav-top-mobile -->
+            <nav class="nav-top-mobile navbar-expand-fluid p-0 d-none">
+                <div class="nav-wrap container-fluid p-0">
+                    <a class="home" href="/main.html">홈</a>
+                    <div class="nav-logout float-end">
+                        <a href="index.html">로그인</a>
+                        <a href="join_agree.html">회원가입</a>
+                    </div>
+                    <div class="nav-login float-end d-none">
+                        <a class="user-c-name"> 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="mypage.html">마이페이지</a>
+                    </div>
+                    <div class="nav-admin float-end d-none">
+                        <a class="user-c-name">관리자 님</a>
+                        <a class="logout-btn">로그아웃</a>
+                        <a href="product_list.html">마이페이지</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- content-dashboard -->
+            <div class="content-dashboard container-fluid p-0">
+                <!-- content-search -->
+                <div class="content-search">
+                    <div class="search-logo">
+                        <a href="/main.html">
+                            <img src="img/login_logo.png" class="search-img">
+                        </a>
+                    </div>
+                </div>
+                <!-- content-mnav -->
+                <div class="content-mnav container-fluid p-0">
+                    <div class="mnav-menu">
+                        <div class="list">
+                            <a href="/dashboard.html?type=house">관엽</a>
+                            <a href="/dashboard.html?type=western">서양란</a>
+                            <a href="/dashboard.html?type=oriental">동양란</a>
+                            <a href="/dashboard.html?type=etc">기타</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-main -->
+                <div class="content-wrap content-main container-fluid p-0">
+                    <div class="content-slide">
+                        <div class="slide-top">
+                            <h2 class="m-0">
+                                <strong>자주 쓰는</strong> 상품
+                            </h2>
+                            <div class="slide-btn-wrap">
+                                <a class="carousel-control-prev btn-left" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                                    <i class="bi bi-caret-left-fill"></i>
+                                </a>
+                                <a class="carousel-control-next btn-right" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                                    <i class="bi bi-caret-right-fill"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="slide-content">
+                            <div id="carouselExampleControls" class="carousel slide slide-wrap" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="slide carousel-item one active">
+                                        <div class="img-border-top">
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc1" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName1"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc2" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName2"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc3" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName3"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc4" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName4"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-border-bottom">
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc5" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName5"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc6" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName6"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc7" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName7"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc8" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName8"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slide carousel-item two">
+                                        <div class="img-border-top">
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc9" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName9"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc10" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName10"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc11" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName11"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc12" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName12"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="img-border-bottom">
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc13" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName13"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc14" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName14"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc15" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName15"></span>
+                                                </div>
+                                            </div>
+                                            <div class="img-box">
+                                                <div class="box-img">
+                                                    <a href="javascript:;" class="product-link">
+                                                        <img class="productSrc16" src="">
+                                                    </a>
+                                                </div>
+                                                <div class="box-txt">
+                                                    <span class="productName16"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-notice">
+                        <div class="notice-top">
+                            <h2>공지사항</h2>
+                            <a href="/notice.html" class="text-decoration-none get-notice">더보기</a>
+                        </div>
+                        <div class="notice-bottom">
+                            <table class="notice-table">
+                                <colgroup>
+                                    <col width="30%">
+                                    <col width="70%">
+                                </colgroup>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- footer -->
+                <div class="content-wrap container-fluid p-0 footer">
+                    <div class="company-wrap">
+                        <p>법인명: 농업회사법인 신호 주식회사 | 대표: 방기숙 | 사업자등록번호: 8778600364</p>
+                        <p>서울특별시 서초구 헌인릉1길 42(내곡동)</p>
+                        <p>팩스: 02-459-1268</p>
+                        <p>통신판매업 신고번호 : 2021-서울서초-1453호</p>
+                        <p>서비스 이용문의: 02-459-1260 | 이메일: sinho2016@naver.com</p>
+                        <p class="copyRight">COPYRIGHT ⓒ <b>신호 주식회사</b> ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+                <div class="content-wrap container-fluid p-0 footer-mobile">
+                    <div class="company-wrap">
+                        <p class="company-name">농업회사법인 신호(주)</p>
+                        <p class="dropdownBtn">
+                            <button class="btn dropdown" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="true" aria-controls="collapseExample">
+                                사업자 정보 <i class="bi bi-caret-down-fill"></i>
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <p>대표: 방기숙 | 사업자등록번호: 8778600364</p>
+                                <p>서울특별시 서초구 헌인릉1길 42(내곡동)</p>
+                                <p>팩스: 02-459-1268</p>
+                                <p>통신판매업 신고번호 : 2021-서울서초-1453호</p>
+                                <p>서비스 이용문의: 02-459-1260 | 이메일: sinho2016@naver.com</p>
+                                <p class="copyRight">COPYRIGHT ⓒ <b>신호 주식회사</b> ALL RIGHTS RESERVED.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

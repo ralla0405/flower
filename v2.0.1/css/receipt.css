@@ -1,0 +1,63 @@
+@page
+{
+    size: A5;
+    margin: 0;
+}
+*
+{
+    font-weight: bold;
+}
+.sheet
+{
+    text-align: center;
+}
+.sheet h3
+{
+    font-weight: bold;
+}
+.title-wrap
+{
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+.no
+{
+    float: left;
+    font-size: 90px;
+}
+.title
+{
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.orderFrom-wrap
+{
+    text-align: right;
+    line-height: 10px;
+}
+.orderFrom-wrap h3
+{
+    font-weight: bold;
+}
+.shipDate
+{
+    text-align: left;
+    font-size: 20px;
+}
+table
+{
+    width: 100%;
+    text-align: center;
+    border: 1px solid #000;
+}
+table tr, table tr td
+{
+    border: 1px solid #000;
+    height: 30px;
+}
+.ship-wrap
+{
+    height: 190px;
+}

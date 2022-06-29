@@ -1,0 +1,87 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+.wrap .nav-top
+{
+    min-width: 1200px;
+    border-bottom: 1px solid #C3C3C3;
+    background-color: #ECECEC;
+}
+.nav-wrap
+{
+    width: 1200px;
+    height: 44px;
+    margin: 0 auto;
+    line-height: 44px;
+    text-align: left;
+}
+.nav-title
+{
+    border-bottom: 1px solid #fff;
+    border-left: 1px solid #C3C3C3;
+    border-right: 1px solid #C3C3C3;
+    background-color: #fff;
+    padding: 0 5px;
+    float: left;
+    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+}
+.nav-title:hover
+{
+    cursor: pointer;
+}
+.nav-logout, .topnav-login
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.nav-logout a, .topnav-login a
+{
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 4px;
+}
+.nav-logout a::before, .nav-login a::before
+{
+    content: "\2223";
+    padding-right: 7px;
+    font-weight: lighter;
+    padding-bottom: 5px;
+}
+.nav-logout a:first-child::before, .nav-login a:first-child:before
+{
+    content: "";
+}
+.nav-logout a:last-child, .nav-login a:last-child
+{
+    padding-right: 7px;
+}
+.nav-logout a:hover, .nav-login a:hover
+{
+    cursor: pointer;
+}
+.notice-cnt
+{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: -2px 0 0 6px;
+    border-radius: 100%;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 20px;
+    text-align: center;
+    background-color: #FF6C00 !important;
+}
+.content-login
+{
+    min-width: 1200px;
+    height: 168px;
+    background-color: #fff;
+    padding-bottom: 15px !important;
+}

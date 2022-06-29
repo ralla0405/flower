@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>신호플라워</title>
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/common/class.js"></script>
+        <script type="text/javascript" src="js/common/common.js"></script>
+        <script type="text/javascript" src="js/util/post.js"></script>
+        <script type="text/javascript" src="js/order.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <!-- font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+        <link rel="shortcut icon" href="#">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/receipt.css?ver=1.0.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body class="A5">
+        <section class="sheet padding-10mm">
+            <div class="title-wrap">
+                
+                <h2 class="title">● 인 수 증 ●</h2>
+            </div>
+            <div class="orderFrom-wrap">
+                <h1 class="no"></h1>
+                <h3>신 호</h3>
+                <p>서초구 내곡동 1-828</p>
+                <p>TEL: 02-459-1260</p>
+                <p>FAX: 02-459-1268</p>
+            </div>
+            <p class="shipDate"></p>
+            <table>
+                <colgroup>
+                    <col width="20%">
+                    <col width="30%">
+                    <col width="20%">
+                    <col width="30%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>품명</th>
+                        <td class="shipProduct"></td>
+                        <th>비고</th>
+                        <td></td>
+                    </tr>
+                    <tr class="ship-wrap">
+                        <th>리본문구<br>(카드내용)</th>
+                        <td colspan="3" class="shipMemo"></td>
+                    </tr>
+                    <tr class="ship-wrap">
+                        <th>배달장소<br>(전화번호)</th>
+                        <td colspan="3" class="shipAddress"></td>
+                    </tr>
+                    <tr>
+                        <th>인수인</th>
+                        <td></td>
+                        <th>도착시간</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>배송후인수자 연락처 <span class="shipOrderCompanyTel"></span></h3>
+            <h3>◀ 기사님은 배송후 연락주세요 ▶</h3>
+        </section>
+    </body>
+</html>

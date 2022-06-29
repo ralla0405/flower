@@ -1,0 +1,405 @@
+@import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+* {
+    margin: 0;
+    padding: 0;
+}
+input {
+    -webkit-appearance:none;  /*그림자*/ 
+}
+html, body
+{
+    font-family: 'NanumSquareRound', sans-serif;
+}
+.index{
+    width: 850px;
+    height: 100%;
+    margin: 0 auto;
+    display: none;
+}
+/*title css*/
+.index .title{
+    float: left;
+    width: 100%;
+    height: 140px;
+}
+.index .title h2{
+    width: 400px;
+    line-height: 45px;
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+}
+.index .title .noticeTitle{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+}
+.index .title .noticeContent{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+}
+.index .title div{
+    width: calc(100%/4);
+    height: 35px;
+    text-align: center;
+}
+.index .title .noticeBtn{
+    float: left;
+    display: none;
+}
+.index .title .userBtn{
+    float: left;
+    display: none;
+}
+.index .title .imgBtn{
+    float: left;
+    display: none;
+}
+.index .title .logoutBtn{
+    float: right;
+}
+.index .title div input[type="button"]{
+    width: 50%;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    color: black;
+    background-color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+/*content css*/
+.index .content{
+    float: left;
+    width: 100%;
+    height: calc(100% - 165px);
+}
+.index .content .flowerCol{
+    float: left;
+    width: calc(100%/4);
+    height: 100%;
+    margin: 0 auto;
+}
+.index .content .flowerCol .colTitle{
+    width: 140px;
+    height: 35px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #B3F465;
+}
+.index .content .flowerCol .active{
+    background-color: #62A90C;
+}
+.index .content .flowerCol .colTitle span{
+    line-height: 35px;
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: bold;
+}
+.index .content .flowerCol .colContents{
+    width: 140px;
+    margin: 0 auto;
+    background-color: white;
+}
+.index .content .flowerCol .colContents .product{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin-top: 8px;
+    cursor: pointer;
+}
+.index .content .flowerCol .colContents .product img{
+    width: 100%;
+    height: 170px;
+}
+.index .content .flowerCol .colContents .product form input[type="submit"]{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -10px;
+    right: -10px;
+    line-height: 26px;
+    color: white;
+    background-color: #162D42;
+    border-radius: 24px;
+    border: 0;
+    cursor: pointer;
+}
+.index .content .flowerCol .colContents .product .deleteType, .deleteName{
+    display: none;
+}
+.index .content .flowerCol .colContents .product .contentsName, .contentPrice, .contentInfo{
+    display: block;
+    font-size: 12px;
+}
+/*animationDiv css*/
+.index .content .animationDiv{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+.index .content .animationDiv .formDiv{
+    width: 500px;
+    margin: 30px auto;
+    animation: animatezoom 0.3s;
+    background-color: white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+}
+.index .content .update .formDiv{
+    margin: 70px auto;
+}
+.index .content .animationDiv .formDiv .formTitle{
+    width: 100%;
+    height: 90px;
+    padding: 16px;
+    text-align: center!important;
+}
+.index .content .animationDiv .formDiv .formTitle .formText{
+    width: 100%;
+    position: relative;
+    margin-left: 10%;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.index .content .animationDiv .formDiv .formTitle .formX{
+    float: right;
+    width: 10%;
+    font-size: 24px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+.index .content .animationDiv .formDiv .formContainer{
+    width: 100%;
+    padding-bottom: 30px;
+}
+.index .content .animationDiv .formDiv .formContainer .containerDiv{
+    width: 90%;
+    margin: 0 auto;
+}
+.index .content .animationDiv .formDiv .formContainer .containerDiv input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin: 16px 0px ;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+.index .content .animationDiv .formDiv .formContainer .containerDiv .imgDiv{
+    float: left;
+    width: 50%;
+}
+.index .content .animationDiv .formDiv .formContainer .containerDiv .imgDiv input[type="file"]{
+    width: 90%;
+    height: 200px;
+    padding: 10px;
+    margin: 16px 10% 16px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+.index .content .animationDiv .formDiv .formContainer .containerDiv .imgDiv .previewDiv{
+    width: 90%;
+    height: 200px;
+    margin: 16px 10% 16px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+.index .content .animationDiv .formDiv .formContainer .containerDiv .imgDiv .previewDiv .productPreview{
+    width: 100%;
+    height: 100%;
+    padding: 2.5% 20%;
+    box-sizing: border-box;
+    display: none;
+}
+.index .content .animationDiv .formDiv .formContainer .containerDiv .imgDiv .previewDiv .updatePreview{
+    width: 100%;
+    height: 100%;
+    padding: 2.5% 20%;
+    box-sizing: border-box;
+}
+.index .content .animationDiv .formDiv .formContainer input[type="text"], .formContainer input[type="number"]{
+    width: 100%;
+    padding: 10px;
+    margin: 16px 0px ;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+.index .content .animationDiv .formDiv .formContainer input[type="submit"], .formContainer input[type="button"]{
+    width: 100%;
+    padding: 10px;
+    margin: 16px 0px ;
+    box-sizing: border-box;
+    color: black;
+    background-color: #B3F465;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+.index .content .animationDiv .formDiv .formContainer .productType, .updateType{
+    width: 100%;
+    padding: 10px;
+    margin: 16px 0px ;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'NanumSquareRound', sans-serif;
+}
+.index .content .animationDiv .formDiv .formContainer .userViewImg{
+    width: 250px;
+    height: 350px;
+    margin: 0 auto;
+}
+.index .content .animationDiv .formDiv .formContainer .userViewImg .imgView{
+    width: 100%;
+    height: 100%;
+}
+.index .content .animationDiv .formDiv .formContainer .userViewLabel{
+    width: 100%;
+    padding: 10px;
+}
+.index .content .animationDiv .formDiv .formContainer .updatePreImg, .updatePreType{
+    display: none;
+}
+.index .content .animationDiv .formDiv .formContainer .listDiv{
+    width: 90%;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    border-top: 1px solid #B3F465;
+}
+.index .content .animationDiv .formDiv .formContainer .listDiv input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    float: right;
+    position: relative;
+    top: 13.5px;
+}
+.index .content .animationDiv .table{
+  display: none;
+}
+/* 모바일 css */
+@media screen and (max-device-width: 1200px) and (orientation: portrait){
+    .index{
+        width: 100%;
+    }
+    /*title*/
+    .index .title{
+        height: 100px;
+    }
+    .index .title h2{
+        line-height: 25px;
+        font-size: 20px;
+    }
+    .index .title .noticeTitle{
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+    }
+    .index .title .noticeContent{
+        height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+    }
+    .index .title .topNav input[type="button"]{
+        width: 100%;
+        font-size: 16px;
+    }
+    /*content*/
+    .index .content .flowerCol .colTitle{
+        width: 90%;
+        height: 25px;
+    }
+    .index .content .flowerCol .colTitle span{
+        line-height: 25px;
+        font-size: 16px;
+    }
+    .index .content .flowerCol .colContents{
+        width: 90%;
+    }
+    .index .content .flowerCol .colContents .product form input[type="submit"]{
+        width: 18px;
+        height: 18px;
+        line-height: 20px;
+        border-radius: 18px;
+    }
+    .index .content .flowerCol .colContents .product img{
+        height: 123px;
+    }
+    .index .content .flowerCol .colContents .product .contentsName, .contentPrice, .contentInfo{
+        font-size: 10px;
+    }
+    /*animationDiv*/
+    .index .content .animationDiv .formDiv{
+        width: 95%;
+        height: 95%;
+        /*margin-top: 30px;*/
+    }
+    .index .content .update .formDiv {
+        margin: 30px auto;
+    }
+    .index .content .animationDiv .formDiv .formTitle{
+        height: 52px;
+    }
+    .index .content .animationDiv .formDiv .formTitle .formText{
+        font-size: 25px;
+    }
+    .index .content .animationDiv .formDiv .formContainer .containerDiv .imgDiv input[type="file"]{
+        height: 100px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .index .content .animationDiv .formDiv .formContainer .containerDiv .imgDiv .previewDiv{
+        height: 100px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    .index .content .animationDiv .formDiv .formContainer input[type="text"], .formContainer input[type="number"]{
+        margin: 0px 0px;
+        padding: 5px;
+    }
+    .index .content .animationDiv .formDiv .formContainer input[type="submit"], .formContainer input[type="button"]{
+        margin: 16px 0px;
+        padding: 5px;
+    }
+    .index .content .animationDiv .formDiv .formContainer .productType{
+        margin: 0px 0px;
+    }
+    .index .content .animationDiv .formDiv .formContainer .productType, .updateType{
+        margin: 0px 0px;
+        padding: 5px;
+    }
+
+}

@@ -1,0 +1,141 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-size: 12px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9
+{
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+    float: left;
+}
+a
+{
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.data-group
+{
+    margin-top: 20px;
+}
+.data-group .group-title
+{
+    background-color: #5BC0DE;
+    font-weight: bold;
+    padding: 5px 5px;
+    font-size: 14px;
+}
+.data-group .group-content
+{
+    font-size: 14px;
+}
+.dashboard-title
+{
+    color: #666;
+    font-size: 14px;
+}
+.dashboard-title::before
+{
+    content: "＊";
+}
+.dashboard-title::after
+{
+    content: ":";
+}
+.dashboard-content
+{
+    color: #0053A6;
+    font-size: 16px;
+    font-weight: bold;
+}
+.glyphicon
+{
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: '';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.row::before
+{
+    display: table;
+    content: " ";
+}
+.row
+{
+    margin-right: -15px;
+    margin-left: -13px;
+    display: block;
+    flex-wrap: unset;
+}
+.row::after
+{
+    clear: both;
+    display: table;
+    content: " ";
+}
+.data-column
+{
+    padding-left: 15px;
+    margin-top: 3px;
+}
+.column-title
+{
+    background-color: #E8E8E8;
+    padding-bottom: 3px;
+    padding-top: 3px; 
+}
+.column-content
+{
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.btn-info
+{
+    color: #FFF;
+}
+.btn-info:hover
+{
+    color: #FFF;
+    background-color: #31b0d5;
+    border-color: #269abc;
+}
+.btn-default
+{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-default:hover
+{
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+input[name="shipImgInsert"]
+{
+    font-size: 12px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+input[name="shipImgInsert"]:hover
+{
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}

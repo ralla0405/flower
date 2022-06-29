@@ -1,0 +1,73 @@
+* 
+{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    font-size: 12px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+a
+{
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.from-insert
+{
+    width: 90%;
+    margin: 10px auto;
+}
+.from-insert input[name="fromTxt"]
+{
+    width: 85%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.from-insert input[name="fromTxtBtn"]
+{
+    background-color: #87B14B;
+    color: white;
+}
+table
+{
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+table thead tr
+{
+    border-top: 1px solid #CCA901;
+    border-bottom: 1px solid #CCA901;
+    background-color: #F7F1D7;
+    font-size: 16px;
+}
+table tbody .fromContents
+{
+    cursor: pointer;
+}
+table tbody .fromContents:hover
+{
+    color: #F27B24;
+}
+table tbody tr:nth-child(even)
+{
+    background-color: #F3F3F3;
+}
+table tbody tr:hover
+{
+    background-color: #F7F1D7;
+}
+table tbody tr input
+{
+    color: #1744B4;
+}
+/* mobile */
+@media screen and (max-width: 767px) {
+    .from-insert input[name="fromTxt"]
+    {
+        width: 80%;
+    }
+}
